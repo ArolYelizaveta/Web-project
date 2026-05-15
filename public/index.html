@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Танцевальный коллектив</title>
+</head>
+<body>
+
+    <header>
+        <span class="logo">В ритме страсти</span>
+    </header>
+    
+    <div class="menu">
+        <button onclick="ShowDefault()">ПОКАЗАТЬ ВСЕ ПО СТРАНИЦАМ</button>
+        <button onclick="CreateNew()">ДОБАВИТЬ ТАНЕЦ</button>
+        <button onclick="ShowById()">НАЙТИ ПО ID</button>
+        <button onclick="ShowByName()">НАЙТИ ПО НАЗВАНИЮ</button>
+        <button onclick="SortByName()">ОТСОРТИРОВАТЬ ПО НАЗВАНИЮ</button>
+        <button onclick="location.href='/chat'" style="background-color: #4ecca3; color: #1a1a2e; border-color: #4ecca3; font-weight: bold;">ОТКРЫТЬ ЧАТ 💬</button>
+    </div>
+
+
+    <div class="form-wrapper ds-none" id="form-wrapper">
+        <div class="form" id="form">
+            <span class="title">Введите данные танца:</span>
+            <div class="row">
+                <span class="subtitle">Название:</span>
+                <input type="text" name="name" id="name-input" value="">
+            </div>
+            <div class="row">
+                <span class="subtitle">Описание:</span>
+                <input type="text" name="desc" id="desc-input" value="">
+            </div>
+            <div class="form-controls">
+                <button onclick="CloseForm()" style="border:none">Отменить</button>
+                <button onclick="SubmitForm()">Сохранить</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="view"></div>
+
+    <script src='http://code.jquery.com/jquery-latest.js'></script>
+    <script src="app.js"></script>
+</body>
+</html>

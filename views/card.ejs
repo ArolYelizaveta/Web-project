@@ -1,0 +1,10 @@
+<div class="card" data-id="<%= id %>" data-name="<%= name %>" data-desc="<%= desc %>">
+    <div>
+        <span class="card-id">#<%= id %></span>
+        <strong><%= name %></strong> — <%= desc %>
+    </div>
+    <div>
+        <button onclick="updateCardHandle(event)"><img src="img/edit.png" alt="Edit"></button>
+        <button onclick="deleteCardHandle(event)"><img src="img/delete.png" alt="Delete"></button>
+    </div>
+</div>

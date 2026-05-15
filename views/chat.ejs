@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Чат | Lab 9</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="chat-body">
+    <div id="username-overlay" class="overlay">
+        <div class="modal">
+            <h2>Добро пожаловать в чат</h2>
+            <p>Пожалуйста, введите ваше имя для участия в беседе</p>
+            <input type="text" id="username-input" placeholder="Ваше имя..." autocomplete="off">
+            <button id="join-btn">Войти</button>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="status-indicator"></div>
+            <h1>Socket.IO Chat</h1>
+            <a href="/" class="back-link">← На главную</a>
+        </header>
+
+        <div id="messages" class="messages-area">
+            <!-- Сообщения будут появляться здесь -->
+        </div>
+
+        <div id="typing-indicator" class="typing-indicator"></div>
+
+        <form id="chat-form" class="chat-input-area">
+            <input type="text" id="message-input" placeholder="Введите сообщение..." autocomplete="off">
+            <button type="submit" id="send-btn">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/chat.js"></script>
+</body>
+</html>

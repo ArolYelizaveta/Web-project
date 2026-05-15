@@ -1,0 +1,8 @@
+<% data.forEach(el => { %>
+    <%- include("card.ejs", el) %>
+<% }) %>
+<div class="page-controls">
+<% for(let i =0; i < pages; i++) { %>
+    <%- include("pageButton.ejs", {label: i+1, status: i+1 == active ? "page-btn-active" : ""}) %>
+<% } %>
+</div>
