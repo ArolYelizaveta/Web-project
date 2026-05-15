@@ -3,7 +3,7 @@ let isSortedState = false;
 
 const loadData = (endpoint) => {
     currentEndpoint = endpoint;
-    $.ajax(`http://localhost:3000${endpoint}`, {
+    $.ajax(`${endpoint}`, {
         type: 'GET',
         dataType: 'html',
         success: InsertHTML,
@@ -81,7 +81,7 @@ const updateCardHandle = (e) => {
 
 const deleteCardHandle = (e) => {
     const id = e.currentTarget.parentElement.parentElement.getAttribute('data-id');
-    $.ajax(`http://localhost:3000/items/${id}`, {
+    $.ajax(`items/${id}`, {
         type: 'DELETE', 
         dataType: 'json',
         success: ShowAllCards, 
@@ -114,7 +114,7 @@ const SubmitForm = () => {
     const payload = JSON.stringify({ "name": name, "desc": desc });
 
     if (method === 'POST') {
-        $.ajax("http://localhost:3000/items", {
+        $.ajax("items", {
             type: 'POST', 
             contentType: 'application/json',
             dataType: 'json',
@@ -123,7 +123,7 @@ const SubmitForm = () => {
             error: ErrorHandle,
         });
     } else if (method === 'PUT') {
-        $.ajax(`http://localhost:3000/items/${id}`, {
+        $.ajax(`items/${id}`, {
             type: 'PUT', 
             contentType: 'application/json',
             dataType: 'json',
